@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block head_content %}
-  <title>Contact - Hotel Django Demo</title>
-  <link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact.css">
+	<title>Contact - Hotel Django Demo</title>
+	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact.css">{% block head_content_2 %}
+	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact-form.css">{% endblock %}
 {% endblock %}
 
 {% block body_content %}
@@ -18,8 +19,8 @@
     <p style='margin-top:16px'>🏠 Hotel Django Demo,<br>179 Henderson Street,<br>Singapore, Singapore</p>
     <p>☎ +65 6123 4567</p>
     <p>✉ contact@django.com.sg</p>
-  </div>
-  <form method='POST'>
+  </div>{% block form_content %}
+  <form id='main-column' method='POST'>
     {% csrf_token %}
     <h2 style='margin-top:0;text-align:center;'>Send us a message!</h2>
     <label for='id_first_name'>First Name<span style='color:red'>*</span></label><!--Prevent whitespace
@@ -37,7 +38,7 @@
     <label for='id_content'>Message<span style='color:red'>*</span></label>
     {{ form.content }}
     <button style='display:block;width:60%;margin:2vw auto 0px auto;'>SUBMIT</button>
-  </form>
+  </form>{% endblock %}
   </div>
   <script>
     /** disable mousewheel on a input number field when in focus **/

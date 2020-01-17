@@ -6,7 +6,7 @@ def contact(request):
     form = Message_Form(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('/rooms/')
+      return render(request, 'contact_completed.html', {'form': form})
   else:
     form = Message_Form()
   
