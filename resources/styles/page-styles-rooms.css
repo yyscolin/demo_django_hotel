@@ -1,0 +1,142 @@
+#posters-screen {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    position: relative;
+    width: 80vw;
+}
+#posters-container {
+    display: inline-block;
+    left: 0;
+    margin-bottom: 16px;
+    position: relative;
+    transition: left 1.5s;
+    width: max-content;
+}
+.poster-card {
+    background-color: white;
+    border-color: black;
+    border-style: dotted;
+    border-width: .5vw;
+    display: inline-block;
+    margin: 0 4vw;
+    padding: 2vw;
+    width: 72vw;
+}
+.poster-card>.poster-title {
+    font-family: cursive;
+    font-style: oblique;
+}
+.poster-card>.poster-title>img {
+    width: 32px;
+    height: 32px;
+}
+.poster-card>.gallery {
+    float: left;
+    position: relative;
+    width: 60%;
+}
+.poster-card>.gallery>.gallery-view {
+    opacity: 0;
+    transition: opacity 1s;
+    width: 100%;
+}
+.poster-card>.gallery>.gallery-view.active {
+    left: 0;
+    opacity: 1;
+    position: absolute;
+}
+.poster-card>.gallery>.thumbnails {
+    border: 2px groove black;
+    margin-top: 8px;
+    padding: 4px 1%;
+}
+.poster-card>.gallery>.thumbnails>img {
+    cursor: pointer;
+    margin-left: .5%;
+    margin-right: .5%;
+    width: 24%;
+}
+.poster-card>.gallery>.thumbnails>img.active {
+    border: 2px solid tomato;
+    cursor: initial;
+}
+.poster-card>.right {
+    float: right;
+    margin-left: 2%;
+    width: 38%;
+}
+
+
+.posters-nav-btn {
+    background-color: lightgrey;
+    border-radius: 1vw;
+    cursor: pointer;
+    display: flex;
+    height: 50%;
+    margin: 1vw;
+    opacity: 0.4;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 25%;
+    transition: opacity 1s;
+    width: 2vw;
+    z-index: 1;
+}
+.posters-nav-btn[data-direction='>'] {
+    right: 0;
+}
+.posters-nav-btn::before {
+    content: attr(data-direction);
+}
+.posters-nav-btn:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+    #posters-screen {
+        width: 90vw;
+    }
+    .poster-card {
+        padding: 1.5vw;
+        width: 82vw;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #posters-screen {
+        width: 94vw;
+    }
+    .poster-card {
+        padding: 1.5vw;
+        width: 90vw;
+        margin: 0 2vw;
+    }
+    .posters-nav-btn {
+        display: inline-flex;
+        height: initial;
+        margin: 0 7%;
+        position: relative;
+        top: initial;
+        width: 36%;
+        z-index: initial;
+    }
+    .posters-nav-btn::before {
+        content: attr(data-text);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .poster-card>.gallery, .poster-card>.right {
+        float: initial;
+        width: 100%;
+    }
+    .poster-card>.poster-title {
+        text-align: center;
+        margin-left: 0;
+    }
+    .poster-card>p {
+        margin: 8px 8%;
+    }
+}

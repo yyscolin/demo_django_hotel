@@ -1,0 +1,277 @@
+body {
+  background: url('https://wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-34.jpg');
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+header {
+  background-color: brown;
+  border-bottom-left-radius: 200px;
+  height: 240px;
+  position: relative;
+  width: 100%;
+}
+header>h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  font-variant: small-caps;
+  height: 240px;
+  line-height: 240px;
+  margin: 0 0 0 300px;
+  width: max-content;
+}
+header>h1>br {
+  display: none;
+}
+header>h1>b {
+  font-size: 64px;
+}
+header>nav {
+  bottom: 0;
+  position: absolute;
+  right: 240px;
+}
+header>nav>a {
+  color: white;
+  font-size: 24px;
+  padding: 3px 12px;
+}
+header>nav>a:hover {
+  text-decoration: none;
+}
+
+footer {
+  background-color: brown;
+  bottom: 0;
+  color: white;
+  font-size: 18px;
+  padding: 4px 120px;
+  position: absolute;
+  width: 100%;
+}
+
+#menu-button {
+  background-color: lightblue;
+  border: 1px solid white;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  text-align: center;
+}
+
+h1.title {
+  border-bottom: 2px solid black;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 128px auto 96px auto;
+  min-width: 36vw;
+  text-align: center;
+  width: max-content;
+}
+h1.title>b {
+  font-size: 96px;
+  font-weight: 900;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance:textfield;
+}
+textarea {
+  resize: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+.noscroll_menu {
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+  header {
+    border-bottom-left-radius: 160px;
+    height: 200px;
+  }
+  header>h1 {
+    font-size: 30px;
+    height: 200px;
+    line-height: 200px;
+    margin: 0 0 0 250px;
+  }
+  header>h1>b {
+    font-size: 54px;
+  }
+  header>nav {
+    right: 160px;
+  }
+  header>nav>a {
+    font-size: 20px;
+    padding: 3px 10px;
+  }
+
+  footer {
+    margin-top: 96px;
+  }
+
+  h1.title {
+    font-size: 42px;
+    margin: 96px auto 72px auto;
+  }
+  h1.title>b {
+    font-size: 84px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header {
+    border-bottom-left-radius: 120px;
+    height: 180px;
+  }
+  header>h1 {
+    font-size: 24px;
+    height: 180px;
+    line-height: 180px;
+    margin: 0 0 0 160px;
+  }
+  header>h1>b {
+    font-size: 48px;
+  }
+  header>nav {
+    right: 80px;
+  }
+  header>nav>a {
+    font-size: 18px;
+    padding: 2px 9px;
+  }
+
+  footer {
+    margin-top: 72px;
+  }
+
+  h1.title {
+    font-size: 36px;
+    margin: 72px auto 64px auto;
+  }
+  h1.title>b {
+    font-size: 72px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    border-bottom-left-radius: 90px;
+    height: 140px;
+  }
+  header>h1 {
+    font-size: 20px;
+    height: 140px;
+    line-height: 140px;
+    margin: 0 0 0 100px;
+  }
+  header>h1>b {
+    font-size: 40px;
+  }
+  header>nav {
+    right: 56px;
+  }
+  header>nav>a {
+    font-size: 16px;
+    padding: 2px 9px;
+  }
+
+  footer {
+    margin-top: 64px;
+  }
+
+  h1.title {
+    font-size: 30px;
+    margin: 56px auto 52px auto;
+  }
+  h1.title>b {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #menu-button {
+    font-size: 36px;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    margin: 45px 16px;
+    width: 48px;
+  }
+
+  header {
+    border-bottom-left-radius: 0;
+  }
+  header>h1 {
+    margin: 0 auto;
+  }
+  header>h1>b {
+    font-size: 34px;
+  }
+  header>nav {
+    background-color: lightcoral;
+    border-top: 0;
+    bottom: none;
+    height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    right: 0;
+    top: 140px;
+    transition: border-top 0.5s, height 1.5s, padding-top 0.5s;
+    width: 100%;
+    z-index: 2;
+  }
+  header>nav>a {
+    display: block;
+    font-size: 32px;
+    margin: 0 auto;
+    padding: 4px 2%;
+  }
+  header>nav>a:hover {
+    background-color: brown;
+    color: white;
+  }
+  header>nav.menu-active {
+    border-top: 3px solid white;
+    padding-top: 8px;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  header>h1 {
+    line-height: 30px;
+    padding-top: 30px;
+    text-align: center;
+  }
+  header>h1>b {
+    font-size: 28px;
+  }
+  header>h1>br {
+    display: initial;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  footer {
+    padding: 4px 0;
+    text-align: center;
+    width: 100%;
+  }
+}

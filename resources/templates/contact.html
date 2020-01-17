@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+  <title>Contact - Hotel Django Demo</title>
+  <link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact.css">
+{% endblock %}
+
+{% block body_content %}
+  <h1 class='title'><b>C</b>ONTACT <b>U</b>S</h1>
+  <div style='display:flex;margin:0 auto;width:max-content;align-items:top;'>
+  <div id='side-column'>
+    <div id='map-mask'>
+      <div id='map-wrap'>
+        <img onclick='$("#map-mask").addClass("active");$("body").addClass("noscroll_map")' src='/static/images/contact-us-map.png' width='100%'/>
+        <div id='map-close-btn' class='noselect' onclick='$("#map-mask").removeClass("active");$("body").removeClass("noscroll_map")'>&#x2716;</div>
+      </div>
+    </div>
+    <p style='margin-top:16px'>🏠 Hotel Django Demo,<br>179 Henderson Street,<br>Singapore, Singapore</p>
+    <p>☎ +65 6123 4567</p>
+    <p>✉ contact@django.com.sg</p>
+  </div>
+  <form method='POST'>
+    {% csrf_token %}
+    <h2 style='margin-top:0;text-align:center;'>Send us a message!</h2>
+    <label for='id_first_name'>First Name<span style='color:red'>*</span></label><!--Prevent whitespace
+    --><label for='id_last_name'>Last Name</label><!--Prevent whitespace
+    -->{{ form.first_name}}<!--Prevent whitespace
+    -->{{ form.last_name}}<!--Prevent whitespace
+    --><label for='id_email'>E-mail<span style='color:red'>*</span></label>
+    {{ form.email }}
+    <label for='id_country_code'>Phone</label>
+    <span style='width:23.5%;margin-right:.5%;position:relative;'>
+      <span id='floating-plus' class='noselect' onclick='$("#id_country_code").focus()'>+</span>
+      {{ form.country_code }}
+    </span><!--Prevent whitespace
+    -->{{ form.phone }}
+    <label for='id_content'>Message<span style='color:red'>*</span></label>
+    {{ form.content }}
+    <button style='display:block;width:60%;margin:2vw auto 0px auto;'>SUBMIT</button>
+  </form>
+  </div>
+  <script>
+    /** disable mousewheel on a input number field when in focus **/
+    $('form').on('focus', 'input[type=number]', function (e) {
+      $(this).on('wheel.disableScroll', function (e) {
+        e.preventDefault()
+      })
+    })
+    $('form').on('blur', 'input[type=number]', function (e) {
+      $(this).off('wheel.disableScroll')
+    })
+  </script>
+{% endblock %}

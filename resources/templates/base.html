@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script-->
+    <script>
+      function toggleMenu() {
+        $("header>nav").toggleClass("menu-active")
+        $("body").toggleClass("noscroll_menu")
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+    {% block head_content %}
+    <title>Hotel Django Demo</title>
+    {% endblock%}
+</head>
+<body>
+  <header class='noselect'>
+    <div id='menu-button' onclick='toggleMenu()'>&#9776;</div>
+    <h1><b>H</b>OTEL <br><b>D</b>JANGO <b>D</b>EMO</h1>
+    <nav>
+      <a href='/'>Home</a><!-- Prevent whitespace
+      --><a href='/rooms/'>Our Rooms</a><!-- Prevent whitespace
+      --><a href='/about/'>About Us</a><!-- Prevent whitespace
+      --><a href='/contact/'>Contact Us</a>
+    </nav>
+  </header>
+  {% block body_content %}
+  {% endblock %}
+  <footer>© Copyright 2020</footer>
+</body>
+</html>

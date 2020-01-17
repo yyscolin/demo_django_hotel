@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+  <title>Rooms - Hotel Django Demo</title>
+  <script>const maxPosition = {{ rooms|length }}</script>
+  <link rel="stylesheet" type="text/css" href="/static/styles/page-styles-rooms.css">
+{% endblock %}
+
+{% block body_content %}
+  <h1 class='title'><b>O</b>UR <b>R</b>OOMS</h1>
+  <div id='posters-screen'>
+    <div id='posters-container'><!-- Prevent whitespace
+    {% for room in rooms %}
+      --><div class='poster-card'>
+        <h2 class='poster-title right'><!-- Prevent whitespace
+          --><img src='/static/images/{{ room.images_base }}-icon.png'/> {{ room.title }}<!-- Prevent whitespace
+        --></h2>
+        <div class='gallery'>
+          <img class='gallery-view active' src='/static/images/{{ room.images_base }}-1.jpg'/>
+          <img class='gallery-view' src='/static/images/{{ room.images_base }}-2.jpg'/>
+          <div class='thumbnails'>
+            <img class='active' onclick='changeGalleryView($(this))' src='/static/images/{{ room.images_base }}-thumbnail-1.jpg'/><!-- Prevent whitespace
+            --><img onclick='changeGalleryView($(this))' src='/static/images/{{ room.images_base }}-thumbnail-2.jpg'/><!-- Prevent whitespace
+            --><img onclick='changeGalleryView($(this))' src='/static/images/{{ room.images_base }}-thumbnail-3.jpg'/><!-- Prevent whitespace
+            --><img onclick='changeGalleryView($(this))' src='/static/images/{{ room.images_base }}-thumbnail-4.jpg'/>
+          </div>
+        </div>
+        <p class='right'>{{ room.description }}</p>
+        <p class='right'>${{ room.price }} per night</p>
+      </div><!-- Prevent whitespace
+    {% endfor %}
+    --></div>
+    <div onclick='changeScreenPosition(true)' class='noselect posters-nav-btn' data-direction='<' data-text='Previous'></div><!-- Prevent whitespace
+    --><div onclick='changeScreenPosition(false)' class='noselect posters-nav-btn' data-direction='>' data-text='Next'></div>
+  </div>
+  <script src="/static/scripts/page-script-rooms.js"></script>
+{% endblock %}
