@@ -13,6 +13,12 @@
       function toggleMenu() {
         $("header>nav").toggleClass("menu-active")
         $("body").toggleClass("noscroll_menu")
+		let isActive = $("header>nav").hasClass("menu-active")
+		if (isActive) {
+			$("#menu-button").html("&#x2716;")
+		} else {
+			$("#menu-button").html("&#9776;")
+		}
       }
     </script>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
@@ -27,8 +33,8 @@
     <nav>
       <a href='/'>Home</a><!-- Prevent whitespace
       --><a href='/rooms/'>Our Rooms</a><!-- Prevent whitespace
-      --><a href='/about/'>About Us</a><!-- Prevent whitespace
-      --><a href='/contact/'>Contact Us</a>
+      --><a href='/contact/'>Contact Us</a><!-- Prevent whitespace
+      --><a href='/about/'>About Us</a>
     </nav>
   </header>
   {% block body_content %}
