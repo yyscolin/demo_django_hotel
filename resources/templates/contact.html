@@ -2,31 +2,28 @@
 
 {% block head_content %}
 	<title>Contact - Hotel Django Demo</title>
-	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact.css">{% block head_content_2 %}
-	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact-form.css">{% endblock %}
+	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact-form.css">
+	<link rel="stylesheet" type="text/css" href="/static/styles/page-styles-contact-map.css">
 {% endblock %}
 
 {% block body_content %}
   <h1 class='title'><b>C</b>ONTACT <b>U</b>S</h1>
-  <div style='display:flex;margin:0 auto;width:max-content;align-items:top;'>
+  <div style='display:flex;margin:0 auto;width:max-content;'>
   <div id='side-column'>
-    <div id='map-mask'>
-      <div id='map-wrap'>
-        <img onclick='$("#map-mask").addClass("active");$("body").addClass("noscroll_map")' src='/static/images/contact-us-map.png' width='100%'/>
-        <div id='map-close-btn' class='noselect' onclick='$("#map-mask").removeClass("active");$("body").removeClass("noscroll_map")'>&#x2716;</div>
-      </div>
-    </div>
-    <p style='margin-top:16px'>🏠 Hotel Django Demo,<br>179 Henderson Street,<br>Singapore, Singapore</p>
+    <img class='noselect' onclick='$("body").addClass("active-map")' src='/static/images/contact-us-map.png' width='100%'/>
+	<p style='text-align:center'>&#128269;<i>Click to enlarge</i></p>
+    <p>🏠 Hotel Django Demo,<br>179 Henderson Street,<br>Singapore, Singapore</p>
     <p>☎ +65 6123 4567</p>
     <p>✉ contact@django.com.sg</p>
-  </div>{% block form_content %}
-  <form id='main-column' method='POST'>
+  </div>
+  <div id='main-column'>{% block main_column %}
+  <form>
     {% csrf_token %}
     <h2 style='margin-top:0;text-align:center;'>Send us a message!</h2>
     <label for='id_first_name'>First Name<span style='color:red'>*</span></label><!--Prevent whitespace
     --><label for='id_last_name'>Last Name</label><!--Prevent whitespace
-    -->{{ form.first_name}}<!--Prevent whitespace
-    -->{{ form.last_name}}<!--Prevent whitespace
+    -->{{ form.first_name }}<!--Prevent whitespace
+    -->{{ form.last_name }}<!--Prevent whitespace
     --><label for='id_email'>E-mail<span style='color:red'>*</span></label>
     {{ form.email }}
     <label for='id_country_code'>Phone</label>
@@ -38,17 +35,20 @@
     <label for='id_content'>Message<span style='color:red'>*</span></label>
     {{ form.content }}
     <button style='display:block;width:60%;margin:2vw auto 0px auto;'>SUBMIT</button>
-  </form>{% endblock %}
+  </form>
+  <img id='envelope-bottom' class='form-overlay noselect' src='/static/images/envelope-bottom.png'/>
+  <img id='envelope-top' class='form-overlay noselect' src='/static/images/envelope-top.png'/>
+  <div id='envelope-wait' class='center form-overlay noselect'></div>
+  <div id='envelope-symbol' class='center form-overlay noselect'></div>
+  <div id='envelope-message' class='center form-overlay'></div>
+  {% endblock %}</div>
   </div>
-  <script>
-    /** disable mousewheel on a input number field when in focus **/
-    $('form').on('focus', 'input[type=number]', function (e) {
-      $(this).on('wheel.disableScroll', function (e) {
-        e.preventDefault()
-      })
-    })
-    $('form').on('blur', 'input[type=number]', function (e) {
-      $(this).off('wheel.disableScroll')
-    })
-  </script>
+    <div id='black-mask'></div>
+    <div id='map-wrap'>
+		<img class='noselect' src='/static/images/contact-us-map.png' width='100%'/>
+      <div id='map-close-btn' class='noselect' onclick='$("body").removeClass("active-map")'>&#x2716;</div>
+    </div>
+  <script src='/static/scripts/help-script-disable_numfield_scroll.js'></script>
+  <script src='/static/scripts/help-script-get_browser.js'></script>
+  <script src='/static/scripts/page-script-contact.js'></script>
 {% endblock %}
