@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from contact.views import contact
+from contact import views as contact
 from rooms.views import rooms
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('contact/', contact),
+    url('ajax/contact/', contact.contact_ajax),
+    url('contact/', contact.contact_view),
     url('rooms/', rooms)
 ]

@@ -68,6 +68,7 @@
 }
 
 .posters-nav-btn {
+    align-items: center;
     background-color: lightgrey;
     border-radius: 1vw;
     cursor: pointer;
@@ -76,7 +77,6 @@
     margin: 1vw;
     opacity: 0.4;
     position: absolute;
-    align-items: center;
     justify-content: center;
     top: 25%;
     transition: opacity 1s;
