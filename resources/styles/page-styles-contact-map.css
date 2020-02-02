@@ -61,3 +61,60 @@ body.active-map #map-close-btn {
 .active-map {
     overflow: hidden;
 }
+
+@media only screen and (max-width: 992px) {
+	#side-column {
+        width: 31vw;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+	#side-column {
+        display: flex;
+        margin-bottom: 36px;
+        margin-right: 0;
+		width: 80vw;
+    }
+    #side-column>.left {
+        width: 70%;
+    }
+    #side-column>.left>p {
+        margin-bottom: 0;
+    }
+    #side-column>.right {
+        height: max-content;
+        margin: auto;
+        text-align: center;
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+	#side-column {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #side-column>.left {width: 60%;}
+    #side-column>.right {width: 40%;}
+}
+@media only screen and (max-width: 520px) {
+    #side-column>.left {width: 50%;}
+    #side-column>.right {width: 50%;}
+}
+
+@media only screen and (max-width: 480px) {
+	#side-column {
+        display: block;
+    }
+    #side-column>.left {
+        width: 100%;
+    }
+    #side-column>.left>p {
+        margin-bottom: 10px;
+    }
+    #side-column>.right {
+        width: 100%;
+    }
+}
