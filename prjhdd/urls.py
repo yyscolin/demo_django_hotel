@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from home.views import home_view as home
 from contact import views as contact
 from rooms.views import rooms
 
@@ -22,5 +23,6 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url('ajax/contact/', contact.contact_ajax),
     url('contact/', contact.contact_view),
-    url('rooms/', rooms)
+    url('rooms/', rooms),
+    url('', home)
 ]
