@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head_content %}
+  <title>Hotel Django Demo</title>
+  <style>
+    #main-content {
+	  background-image: url(/static/images/flower-headboard.jpg);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 56.6vw;
+      padding: 32px;
+	  margin: 32px auto;
+	  width: 85vw;
+	}
+	#text-info {
+	  background-color: white;
+	  border-radius: 32px;
+	  margin: 0 0 0 auto;
+	  max-height: 100%;
+	  opacity: .8;
+	  padding: 16px 32px;
+	  width: 40%;
+	}
+  </style>
+{% endblock %}
+
+{% block body_content %}
+  <h1 class='title'><b>W</b>ELCOME</h1>
+  <div id='main-content'>
+    <div id='text-info'>
+      <h2>Lorem Ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis lacinia urna nec convallis. Proin commodo erat orci, nec venenatis nisi dignissim eu.</p>
+	  <p>Maecenas porta, lorem et aliquet porta, magna arcu commodo risus, a faucibus magna tellus quis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+	  <p>Integer posuere, enim eget tempor condimentum, mauris massa pulvinar lorem, aliquet volutpat augue lacus vel ex.</p>
+	  <a href='/rooms'>Click to see our rooms</a>
+    </div>
+  </div>
+{% endblock %}
