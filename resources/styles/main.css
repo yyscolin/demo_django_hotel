@@ -1,5 +1,5 @@
 body {
-  background: url('https://wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-34.jpg');
+  background: url('/static/images/background-main.jpg');
   background-attachment: fixed;
   min-height: 100vh;
   padding-bottom: 80px;

@@ -1,4 +1,4 @@
-"""prjhdd URL Configuration
+"""Demo Django Hotel URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -12,17 +12,20 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    Note: django.conf.urls.url() was deprecated in Django 3.0, and is removed
+          in Django 4.0+.
 """
-from django.conf.urls import url
+# from django.conf.urls import url (deprecated)
+from django.urls import path
 from django.contrib import admin
 from home.views import home_view as home
 from contact import views as contact
 from rooms.views import rooms
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url('ajax/contact/', contact.contact_ajax),
-    url('contact/', contact.contact_view),
-    url('rooms/', rooms),
-    url('', home)
+    path('admin/', admin.site.urls),
+    path('ajax/contact/', contact.contact_ajax),
+    path('contact/', contact.contact_view),
+    path('rooms/', rooms),
+    path('', home)
 ]
