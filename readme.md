@@ -4,12 +4,15 @@ This is a simple web application powered by the Django framework, demonstrating
 what a typical hotel website will look like.
 
 ## Setup
-1. Clone the repo `git clone https://github.com/yyscolin/demo_django_hotel.git`
-2. Create an empty database
-3. Dump data into the database (Choose correct dump file in "database" folder)
-4. Create a database user with SELECT, INSERT privileges
-5. Copy project/settings.template.py to project/settings.py
-6. Fill in the required information in the settings file
+- Clone the repo `git clone https://github.com/yyscolin/demo_django_hotel.git`
+- Copy project/settings.template.py to project/settings.py
+- Fill in the required information in the settings file
+    - Ensure that the database user has full privileges
+- Create an empty database
+- Create table structures with `py manage.py migrate`
+- Dump data from database.sql into the database
+- Create a database user with SELECT, INSERT privileges
+- Update the database user in project/settings.py to the newly created user
 
 ### Required Linux packages
 python3-django python-django-common postgresql postgresql-contrib libpq-dev python-dev default-libmysqlclient-dev
@@ -45,4 +48,4 @@ cp /home/nginx.conf /etc/nginx/sites-available/default; service nginx restart
 ```
 
 ## Start running the app
-python3 \<project root\>/manage.py runserver 0:\<port\>
+`py manage.py runserver 0:\<port\>`
