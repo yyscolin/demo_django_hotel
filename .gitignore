@@ -130,6 +130,3 @@ dmypy.json
 
 # SSH
 .ssh/
-
-# settings file
-project/settings.py
