@@ -23,16 +23,8 @@ framework, designed to emulate the essence of a modern hotel website.
     - Install pip dependencies `pip3 install -r requirements.txt`
 
 ### Required Linux packages
-```
-# django
-apt install python3-django python-django-common
-
-# postgresql
-apt install postgresql postgresql-contrib
-
-# mysql
-apt install pkg-config default-libmysqlclient-dev
-```
+`apt install -y python3-django python-django-common default-libmysqlclient-dev
+pkg-config`
 
 ## On Microsoft Azure App Service
 
